@@ -1,11 +1,12 @@
 <?php
 
 
-namespace fize\html;
+namespace fize\tag;
 
 
 /**
  * HTML标签生成类
+ * @package fize\html
  */
 class Html
 {

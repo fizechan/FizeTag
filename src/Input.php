@@ -1,7 +1,7 @@
 <?php
 
 
-namespace fize\html;
+namespace fize\tag;
 
 /**
  * 输入框标签生成类
@@ -17,7 +17,7 @@ class Input extends Html
      * @param array $attrs 属性
      * @return string
      */
-    protected static function input($type, $name = null, $value = '', array $attrs = [])
+    public static function input($type, $name = null, $value = '', array $attrs = [])
     {
         $def_attrs = ['type' => $type, 'name' => $name, 'value' => $value];
         $attrs = array_merge($def_attrs, $attrs);

@@ -1,6 +1,6 @@
 <?php
 
-namespace fize\html;
+namespace fize\tag;
 
 /**
  * 表单生成类
@@ -54,6 +54,10 @@ class Form extends Html
      * @var boolean
      */
     protected $escapeHtml = true;
+
+    /**
+     * @var Form
+     */
     protected static $instance;
 
     /**
