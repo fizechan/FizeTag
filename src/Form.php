@@ -4,70 +4,10 @@ namespace fize\tag;
 
 /**
  * 表单生成类
+ * @package fize\tag
  */
 class Form extends Html
 {
-
-    /**
-     * The CSRF token,用于防止表单重复提交.
-     * @var array
-     */
-    protected $csrfToken = ['name' => '__token__'];
-
-    /**
-     * The current model instance for the form.
-     *
-     * @var mixed
-     */
-    protected $model;
-
-    /**
-     * An array of label names we've created.
-     *
-     * @var array
-     */
-    protected $labels = array();
-
-    /**
-     * The reserved form open attributes.
-     *
-     * @var array
-     */
-    protected $reserved = array('method', 'url', 'route', 'action', 'files');
-
-    /**
-     * The form methods that should be spoofed, in uppercase.
-     *
-     * @var array
-     */
-    protected $spoofedMethods = array('DELETE', 'PATCH', 'PUT');
-
-    /**
-     * The types of inputs to not fill values on by default.
-     *
-     * @var array
-     */
-    protected $skipValueTypes = array('file', 'password', 'checkbox', 'radio');
-
-    /**
-     * Escape html
-     * @var boolean
-     */
-    protected $escapeHtml = true;
-
-    /**
-     * @var Form
-     */
-    protected static $instance;
-
-    /**
-     * Form constructor.
-     * @param array $options
-     */
-    public function __construct($options = [])
-    {
-
-    }
 
     /**
      * 创建input标签
@@ -125,7 +65,7 @@ class Form extends Html
      */
     public static function select($name = null, $selecteds = null, array $options = [], array $attrs = [], $is_group = false)
     {
-        if(is_array($selecteds)) {
+        if (is_array($selecteds)) {
             $attrs['multiple'] = true;
         }
         if (is_string($selecteds)) {
@@ -245,7 +185,7 @@ class Form extends Html
      */
     public static function datalist($id, array $options, array $attrs = [], $selecteds = null)
     {
-        if(is_array($selecteds)) {
+        if (is_array($selecteds)) {
             $attrs['multiple'] = true;
         }
         if (is_string($selecteds)) {
@@ -300,7 +240,7 @@ class Form extends Html
      */
     public static function output($name = null, $for = null, $text = '', array $attrs = [])
     {
-        if(is_array($for)) {
+        if (is_array($for)) {
             $for = implode(' ', $for);
         }
         $def_attrs = ['name' => $name, 'for' => $for];
