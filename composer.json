@@ -1,6 +1,6 @@
 {
     "name": "fize/tag",
-    "description": "tag generation class, produced by FizeChan.",
+    "description": "tag generation class.",
     "license": "Apache-2.0",
     "authors": [
         {
