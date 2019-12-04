@@ -1,6 +1,6 @@
 {
     "name": "fize/tag",
-    "description": "tag generation class.",
+    "description": "标签生成类库",
     "license": "MIT",
     "authors": [
         {

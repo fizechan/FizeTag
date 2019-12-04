@@ -6,7 +6,6 @@ namespace fize\tag;
 
 /**
  * HTML标签生成类
- * @package fize\tag
  */
 class Html
 {

@@ -5,7 +5,6 @@ namespace fize\tag;
 
 /**
  * 输入框标签生成类
- * @package fize\tag
  */
 class Input extends Html
 {

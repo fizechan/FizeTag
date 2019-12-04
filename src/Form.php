@@ -4,7 +4,6 @@ namespace fize\tag;
 
 /**
  * 表单生成类
- * @package fize\tag
  */
 class Form extends Html
 {
