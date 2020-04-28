@@ -3,17 +3,17 @@
 namespace fize\tag;
 
 /**
- * 表单生成类
+ * 表单
  */
 class Form extends Html
 {
 
     /**
      * 创建input标签
-     * @param string $type 类型
-     * @param string $name 名称
+     * @param string $type  类型
+     * @param string $name  名称
      * @param string $value 值
-     * @param array $attrs 属性
+     * @param array  $attrs 属性
      * @return string
      */
     public static function input($type, $name = null, $value = '', array $attrs = [])
@@ -25,9 +25,9 @@ class Form extends Html
 
     /**
      * 创建textarea标签
-     * @param string $name 名称
-     * @param string $text 文本内容
-     * @param array $attrs 属性
+     * @param string $name  名称
+     * @param string $text  文本内容
+     * @param array  $attrs 属性
      * @return string
      */
     public static function textarea($name = null, $text = '', array $attrs = [])
@@ -39,11 +39,11 @@ class Form extends Html
 
     /**
      * 创建button标签
-     * @param string $text 文本
-     * @param string $name 名称
+     * @param string $text  文本
+     * @param string $name  名称
      * @param string $value 值
-     * @param string $type 类型
-     * @param array $attrs 属性
+     * @param string $type  类型
+     * @param array  $attrs 属性
      * @return string
      */
     public static function button($text = '', $name = null, $value = null, $type = 'button', array $attrs = [])
@@ -55,11 +55,11 @@ class Form extends Html
 
     /**
      * 创建select标签
-     * @param string $name 名称
+     * @param string $name      名称
      * @param string $selecteds 选中值，多选以数组形式表示
-     * @param array $options 选项
-     * @param array $attrs 属性
-     * @param bool $is_group 参数$options是否为optgroup标签
+     * @param array  $options   选项
+     * @param array  $attrs     属性
+     * @param bool   $is_group  参数$options是否为optgroup标签
      * @return string
      */
     public static function select($name = null, $selecteds = null, array $options = [], array $attrs = [], $is_group = false)
@@ -108,10 +108,10 @@ class Form extends Html
 
     /**
      * 创建optgroup标签
-     * @param string $label 描述
-     * @param array $options option选项
-     * @param array $attrs 属性
-     * @param mixed $selecteds 选中项，多选以数组形式表示
+     * @param string $label     描述
+     * @param array  $options   option选项
+     * @param array  $attrs     属性
+     * @param mixed  $selecteds 选中项，多选以数组形式表示
      * @return string
      */
     public static function optgroup($label, array $options, array $attrs = [], $selecteds = null)
@@ -147,10 +147,10 @@ class Form extends Html
 
     /**
      * 创建option标签
-     * @param string $text 文本
-     * @param string $value 值
-     * @param bool $selected 是否选中
-     * @param array $attrs 属性
+     * @param string $text     文本
+     * @param string $value    值
+     * @param bool   $selected 是否选中
+     * @param array  $attrs    属性
      * @return string
      */
     public static function option($text = '', $value = '', $selected = false, array $attrs = [])
@@ -162,9 +162,9 @@ class Form extends Html
 
     /**
      * 创建label标签
-     * @param string $text 文本
-     * @param string $for 规定 label 绑定到哪个表单元素
-     * @param array $attrs 属性
+     * @param string $text  文本
+     * @param string $for   规定 label 绑定到哪个表单元素
+     * @param array  $attrs 属性
      * @return string
      */
     public static function label($text, $for = null, array $attrs = [])
@@ -176,10 +176,10 @@ class Form extends Html
 
     /**
      * 创建datalist标签
-     * @param string $id ID
-     * @param array $options option选项
-     * @param array $attrs 属性
-     * @param mixed $selecteds 选中项，多选以数组形式表示
+     * @param string $id        ID
+     * @param array  $options   option选项
+     * @param array  $attrs     属性
+     * @param mixed  $selecteds 选中项，多选以数组形式表示
      * @return string
      */
     public static function datalist($id, array $options, array $attrs = [], $selecteds = null)
@@ -218,9 +218,9 @@ class Form extends Html
 
     /**
      * 创建keygen标签
-     * @param string $name 名称
+     * @param string $name    名称
      * @param string $keytype 定义 keytype。rsa 生成 RSA 密钥。
-     * @param array $attrs 属性
+     * @param array  $attrs   属性
      * @return string
      */
     public static function keygen($name = null, $keytype = 'rsa', array $attrs = [])
@@ -231,10 +231,10 @@ class Form extends Html
     }
 
     /**
-     * @param null $name
-     * @param mixed $for 定义输入字段所属的一个或多个表单，多个可以以数组形式传入
-     * @param string $text 文本
-     * @param array $attrs 属性
+     * @param null   $name
+     * @param mixed  $for   定义输入字段所属的一个或多个表单，多个可以以数组形式传入
+     * @param string $text  文本
+     * @param array  $attrs 属性
      * @return string
      */
     public static function output($name = null, $for = null, $text = '', array $attrs = [])

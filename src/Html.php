@@ -1,21 +1,19 @@
 <?php
 
-
 namespace fize\tag;
 
-
 /**
- * HTML标签生成类
+ * HTML标签
  */
 class Html
 {
 
     /**
      * 创建标签
-     * @param string $tag 标签名
-     * @param array $attrs 属性
-     * @param bool $close 是否闭合
-     * @param string $text 显示字符串
+     * @param string $tag   标签名
+     * @param array  $attrs 属性
+     * @param bool   $close 是否闭合
+     * @param string $text  显示字符串
      * @return string 返回HTML代码段
      */
     public static function createTag($tag, array $attrs = [], $close = false, $text = '')
@@ -48,7 +46,7 @@ class Html
 
     /**
      * 拼接成一个属性。
-     * @param string $key 属性名
+     * @param string $key   属性名
      * @param string $value 属性值
      * @return string
      */
