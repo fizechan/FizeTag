@@ -1,22 +1,27 @@
 {
-    "name": "fize/tag",
-    "description": "标签生成类库",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "FizeChan",
-            "email": "chenfengzhan@qq.com"
-        }
-    ],
-    "require": {
-		"php": ">=7.0.0"
-	},
-	"require-dev": {
-        "phpunit/phpunit": "~9.1.0"
-    },
-	"autoload": {
-        "psr-4": {
-            "fize\\tag\\": "src"
-        }
+  "name": "fize/tag",
+  "description": "标签生成类库",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "FizeChan",
+      "email": "chenfengzhan@qq.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Fize\\Tag\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5.0"
+  }
 }

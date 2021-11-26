@@ -1,6 +1,6 @@
 <?php
 
-namespace fize\tag;
+namespace Fize\Tag;
 
 /**
  * 输入框标签

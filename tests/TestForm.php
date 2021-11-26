@@ -1,14 +1,9 @@
 <?php
 
+namespace Tests;
 
-namespace app\controller;
+use Fize\Tag\Form;
 
-use fize\tag\Form;
-
-/**
- * @todo 待修改
- * @package app\controller
- */
 class TestForm
 {
 
