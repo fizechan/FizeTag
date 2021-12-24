@@ -5,23 +5,8 @@ namespace Fize\Tag;
 /**
  * 输入框标签
  */
-class Input extends Html
+class Input
 {
-
-    /**
-     * 创建input标签
-     * @param string $type  类型
-     * @param string $name  名称
-     * @param string $value 值
-     * @param array  $attrs 属性
-     * @return string
-     */
-    public static function input($type, $name = null, $value = '', array $attrs = [])
-    {
-        $def_attrs = ['type' => $type, 'name' => $name, 'value' => $value];
-        $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('input', $attrs, true);
-    }
 
     /**
      * 定义可点击按钮
@@ -282,5 +267,18 @@ class Input extends Html
     public static function search($name = null, $value = '', array $attrs = [])
     {
         return self::input('search', $name, $value, $attrs);
+    }
+
+    /**
+     * 创建input标签
+     * @param string $type  类型
+     * @param string $name  名称
+     * @param string $value 值
+     * @param array  $attrs 属性
+     * @return string
+     */
+    protected static function input($type, $name = null, $value = '', array $attrs = [])
+    {
+        return Form::input($type, $name, $value, $attrs);
     }
 }

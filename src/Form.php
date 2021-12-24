@@ -5,7 +5,7 @@ namespace Fize\Tag;
 /**
  * 表单
  */
-class Form extends Html
+class Form
 {
 
     /**
@@ -20,7 +20,7 @@ class Form extends Html
     {
         $def_attrs = ['type' => $type, 'name' => $name, 'value' => $value];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('input', $attrs, true);
+        return Html::createTag('input', $attrs, true);
     }
 
     /**
@@ -34,7 +34,7 @@ class Form extends Html
     {
         $def_attrs = ['name' => $name];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('textarea', $attrs, false, $text);
+        return Html::createTag('textarea', $attrs, false, $text);
     }
 
     /**
@@ -50,7 +50,7 @@ class Form extends Html
     {
         $def_attrs = ['type' => $type, 'name' => $name, 'value' => $value];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('button', $attrs, false, $text);
+        return Html::createTag('button', $attrs, false, $text);
     }
 
     /**
@@ -75,7 +75,7 @@ class Form extends Html
             foreach ($options as $optgroup) {
                 $ogp_label = $optgroup['label'];
                 $ogp_options = $optgroup['options'];
-                $ogp_attrs = isset($optgroup['attrs']) ? $optgroup['attrs'] : [];
+                $ogp_attrs = $optgroup['attrs'] ?? [];
                 $inner_text .= self::optgroup($ogp_label, $ogp_options, $ogp_attrs, $selecteds);
             }
         } else {
@@ -89,13 +89,13 @@ class Form extends Html
                     }
                     $inner_text .= self::option($text, $value, $option_selected);
                 } else {
-                    $text = isset($option['text']) ? $option['text'] : '';
-                    $value = isset($option['value']) ? $option['value'] : '';
-                    $option_selected = isset($option['selected']) ? $option['selected'] : false;
+                    $text = $option['text'] ?? '';
+                    $value = $option['value'] ?? '';
+                    $option_selected = $option['selected'] ?? false;
                     if (in_array($value, $selecteds)) {
                         $option_selected = true;
                     }
-                    $attrs = isset($option['attrs']) ? $option['attrs'] : [];
+                    $attrs = $option['attrs'] ?? [];
                     $inner_text .= self::option($text, $value, $option_selected, $attrs);
                 }
             }
@@ -103,7 +103,7 @@ class Form extends Html
 
         $def_attrs = ['name' => $name];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('select', $attrs, false, $inner_text);
+        return Html::createTag('select', $attrs, false, $inner_text);
     }
 
     /**
@@ -130,19 +130,19 @@ class Form extends Html
                 }
                 $inner_text .= self::option($text, $value, $option_selected);
             } else {
-                $text = isset($option['text']) ? $option['text'] : '';
-                $value = isset($option['value']) ? $option['value'] : '';
-                $option_selected = isset($option['selected']) ? $option['selected'] : false;
+                $text = $option['text'] ?? '';
+                $value = $option['value'] ?? '';
+                $option_selected = $option['selected'] ?? false;
                 if (in_array($value, $selecteds)) {
                     $option_selected = true;
                 }
-                $attrs = isset($option['attrs']) ? $option['attrs'] : [];
+                $attrs = $option['attrs'] ?? [];
                 $inner_text .= self::option($text, $value, $option_selected, $attrs);
             }
         }
         $def_attrs = ['label' => $label];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('optgroup', $attrs, false, $inner_text);
+        return Html::createTag('optgroup', $attrs, false, $inner_text);
     }
 
     /**
@@ -157,7 +157,7 @@ class Form extends Html
     {
         $def_attrs = ['value' => $value, 'selected' => $selected];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('option', $attrs, false, $text);
+        return Html::createTag('option', $attrs, false, $text);
     }
 
     /**
@@ -171,7 +171,7 @@ class Form extends Html
     {
         $def_attrs = ['for' => $for];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('label', $attrs, false, $text);
+        return Html::createTag('label', $attrs, false, $text);
     }
 
     /**
@@ -213,7 +213,7 @@ class Form extends Html
         }
         $def_attrs = ['id' => $id];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('datalist', $attrs, false, $inner_text);
+        return Html::createTag('datalist', $attrs, false, $inner_text);
     }
 
     /**
@@ -227,7 +227,7 @@ class Form extends Html
     {
         $def_attrs = ['name' => $name, 'keytype' => $keytype];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('keygen', $attrs, true);
+        return Html::createTag('keygen', $attrs, true);
     }
 
     /**
@@ -244,6 +244,6 @@ class Form extends Html
         }
         $def_attrs = ['name' => $name, 'for' => $for];
         $attrs = array_merge($def_attrs, $attrs);
-        return self::createTag('output', $attrs, false, $text);
+        return Html::createTag('output', $attrs, false, $text);
     }
 }
